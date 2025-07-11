@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayush HN | Futuristic Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@300;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle, #0f0f0f, #000);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: #00f7ff;
+      text-shadow: 0 0 10px #00f7ff;
+    }
+
+    .typing {
+      margin-top: 1rem;
+      font-size: 1.3rem;
+      color: #aaa;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      background: #111;
+      padding: 2rem;
+      margin: 2rem 0;
+      border-radius: 15px;
+      border: 1px solid #00f7ff44;
+      box-shadow: 0 0 15px #00f7ff22;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 0 20px #41bfd599;
+    }
+
+    button {
+      background: #00f7ff;
+      border: none;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      margin-top: 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Ayush Gowda</h1>
+    <div class="typing" id="typeText">Loading...</div>
+  </header>
+
+  <section>
+    <div class="card">
+      <h2>👨‍💻 About Me</h2>
+      <p> Hey, I'm Ayush — a passionate BCA student, tech explorer, and creative web developer from Karnataka. 
+  I design, logic, and innovation to build modern websites, apps, and digital experiences that stand out. 
+  
+  I'm fluent in HTML, CSS, JavaScript, and Python, and I love working on real-world projects like encrypted apps, 
+  smart portfolios, and data visualizations,and learning about Ethical hacking and cyber security. Whether it’s building a secure password manager,I always bring creativity and purpose.
+
+
+</p>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Projects</h2>
+      <p>• Offline Voice Assistent<br>
+         • IPL Data Analyzer<br>
+         • Java-Script Video Trimer<br>
+         • Resume Builder<br>
+         • More coming soon...</p>
+      <button onclick="alert('https://github.com/Aayushgowda')">View All Projects</button>
+    </div>
+
+    <div class="card">
+      <h2>📫 Contact</h2>
+      <p><b>Email:</b>ayushhnayush@gmail.com<br> 
+        <b>Github:</b> https://github.com/Aayushgowda<br>
+
+         <b>Instagram:</b>//www.instagram.com/aayush_gowda?igsh=dDZnZDVrOWxwbThr<br>
+
+        <b> Linkdin:</b>https://www.linkedin.com/in/ayush-gowda-49b88b2aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app 
+         
+      <button onclick="alert('Say hi on Insta!')">Contact Me</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Ayush HN.⚡️
+  </footer>
+
+  <script>
+    const roles = ["Web Developer", "AI Explorer", "UI/UX Designer", "Ethical Hacker"];
+    let i = 0;
+    let j = 0;
+    let currentRole = "";
+    let isDeleting = false;
+    const typeText = document.getElementById("typeText");
+
+    function type() {
+      if (i < roles.length) {
+        if (!isDeleting && j <= roles[i].length) {
+          currentRole = roles[i].substring(0, j++);
+        } else if (isDeleting && j >= 0) {
+          currentRole = roles[i].substring(0, j--);
+        }
+
+        typeText.textContent = currentRole;
+
+        if (j === roles[i].length) {
+          isDeleting = true;
+          setTimeout(type, 1000);
+        } else if (isDeleting && j === 0) {
+          isDeleting = false;
+          i = (i + 1) % roles.length;
+          setTimeout(type, 200);
+        } else {
+          setTimeout(type, isDeleting ? 50 : 100);
+        }
+      }
+    }
+
+    type();
+  </script>
+</body>
+</html>
