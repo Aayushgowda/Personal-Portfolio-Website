@@ -4,7 +4,7 @@ Welcome to the source code of my personal portfolio website!
 This website showcases my skills, projects, and contact information in a modern, futuristic design — built to reflect my Gen Z personality and creative tech journey.
 
 ## 🌐 Live Demo
-[Visit Portfolio Website](https://your-username.github.io/your-portfolio-repo/)  
+[Visit Portfolio Website]( https://aayushgowda.github.io/Personal-Portfolio-Website/)  
 
 
 ---
